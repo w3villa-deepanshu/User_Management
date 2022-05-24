@@ -1,0 +1,13 @@
+
+
+<% if @management.present? %>
+  <% @management.each do |item| %>
+<h1>User management Name:-<%=item.name%></h1>
+<a href="/users/<%=@user.id%>/managements/<%=item.id%>">Check All Details </a>
+  <%=link_to "Create User Managemet ",new_user_management_path%>
+
+<% end %>
+<% else %>
+  <h1>No User Management System Found</h1>
+  <%=link_to "Create User Managemet ",new_user_management_path%>
+<% end %>

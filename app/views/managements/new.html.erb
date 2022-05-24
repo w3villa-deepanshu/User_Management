@@ -1,0 +1,24 @@
+<h1>New User Management System</h1>
+<%= form_with model: @user_management_system,url: user_managements_path do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :project_id %><br>
+    <%= form.select :project_id, Project.all.map {|p| [p.name,p.id]}  %>
+<%= Project.inspect%>
+  </div>
+
+
+  <div>
+    <%= form.label :user_id %><br>
+    <%= form.text_area :user_id ,value:@user.id%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>

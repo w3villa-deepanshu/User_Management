@@ -1,0 +1,12 @@
+<% if @users.present? %>
+  <% @users.each do |m| %>
+      <%= link_to m.name, m %><br/>
+        <%=link_to "Create User  ",new_user_path%>
+
+<% end %>
+<% else %>
+  <h1>No Data Found</h1>
+<% end %>
+
+
+
