@@ -1,12 +1,25 @@
-
-
 <% if @management.present? %>
   <% @management.each do |item| %>
-<h1>User management Name:-<%=item.name%></h1>
-<a href="/users/<%=@user.id%>/managements/<%=item.id%>">Check All Details </a>
-  <%=link_to "Create User Managemet ",new_user_management_path%>
-
-<% end %>
+    <table class="table main-table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">View</th> 
+          <th scope="col">Action</th>     
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%=item.id%></td>
+          <td><%=item.name%></td>
+          <td><a href="/users/<%=@user.id%>/managements/<%=item.id%>" class="link">Check All Details </a></td>
+          <td>Delete</td>
+        </tr>
+      </tbody>  
+    </table>
+  <%end%>
 <% else %>
   <h1>No User Management System Found</h1>
   <%=link_to "Create User Managemet ",new_user_management_path%>

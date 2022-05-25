@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @users =  User.all
   end
@@ -34,6 +36,11 @@ class UsersController < ApplicationController
     if @management.update
       redirect_to root_path     
     end
+  end
+
+  def correct_admin
+    @admin = current_user.users.find_by(id: params[:id])
+    redirect_to users_path ,notice: "Not Authorized to edit this friend" if @admin.nil?
   end
 
   

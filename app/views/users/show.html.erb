@@ -1,5 +1,24 @@
-<h1>User Name :- <%=@user.name%></h1>
-<h1>User Experience :- <%=@user.experience%></h1>
 
-<a href="/users/<%= @user.id %>/managements">check all project</a><br/>
-<%# <%=link_to "Add User Management" , new_user_management_path%> 
+
+
+<table class="table main-table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Experience</th>
+          <th scope="col">View</th> 
+          <th scope="col">Action</th>     
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%=@user.id%></td>
+          <td><%=@user.name%></td>
+          <td><%=@user.experience%></td>
+          <td><a href="/users/<%= @user.id %>/managements" class="link">check all project</a></td>
+          <td>Delete</td>
+        </tr>
+      </tbody>  
+    </table>

@@ -8,7 +8,6 @@
   <div>
     <%= form.label :project_id %><br>
     <%= form.select :project_id, Project.all.map {|p| [p.name,p.id]}  %>
-<%= Project.inspect%>
   </div>
 
 

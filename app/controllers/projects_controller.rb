@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
         @project = Project.new
     end
     def create
-        @project = Project.new(pro_params)
+        @project = Project.new(project_params)
         if @project.save
             redirect_to @project
         else
@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
 
     private
 
-    def pro_params
+    def project_params
         params.require(:project).permit(:name)
     end
 end

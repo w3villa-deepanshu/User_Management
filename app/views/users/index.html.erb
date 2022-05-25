@@ -1,11 +1,24 @@
-<% if @users.present? %>
   <% @users.each do |m| %>
-      <%= link_to m.name, m %><br/>
-        <%=link_to "Create User  ",new_user_path%>
-
-<% end %>
-<% else %>
-  <h1>No Data Found</h1>
+  <table class="table main-table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">View</th> 
+          <th scope="col">Action</th>     
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%=m.id%></td>
+          <td><%=m.name%></td>
+          <td><%= link_to "View", m %></td>
+          <td>Delete</td>
+        </tr>
+      </tbody>  
+    </table>
+        <%=link_to "Create User  ",new_user_path, class:"link"%>
 <% end %>
 
 

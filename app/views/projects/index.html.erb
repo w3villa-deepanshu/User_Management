@@ -2,11 +2,27 @@
 
 <% if @projects.present? %>
   <% @projects.each do |item| %>
-  <%=link_to item.name,item%><br/>
-    <%=link_to "Create Project",new_project_path%>
+    <table class="table main-table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">View</th> 
+          <th scope="col">Action</th>     
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%=item.id%></td>
+          <td><%=item.name%></td>
+          <td><%=link_to "View",item,class:"link"%><br/></td>
+          <td>Delete</td>
+        </tr>
+      </tbody>  
+    </table>
 <% end %>
 <% else %>
   <h1>No Project Found</h1>
-  <h1>this is child branch</h1>
+  <h1>this is child branchs</h1>
   <%=link_to "Create Project",new_project_path%>
 <% end %>

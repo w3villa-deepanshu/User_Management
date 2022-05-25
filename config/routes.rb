@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root "users#index"
+  devise_for :admins
   resources :projects
+root "users#index"
   resources :users do
     resources :managements
   end  
